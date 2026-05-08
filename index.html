@@ -49,9 +49,14 @@
     </head>
     <body>
         <div id="map">
+            <a id="map-logo" class="map-logo" href="https://avoin.org" target="_blank" rel="noopener noreferrer" title="Avoin"><img src="resources/avoin.png" alt="Avoin logo"></a>
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                 <div id="popup-content"></div>
+            </div>
+            <div id="docked-info-panel" class="docked-info-panel">
+                <a href="#" id="docked-info-closer" class="ol-popup-closer"></a>
+                <div id="docked-info-content"></div>
             </div>
         </div>
         <script src="resources/qgis2web_expressions.js"></script>
@@ -62,10 +67,147 @@
         <script src="./resources/ol-layerswitcher.js"></script>
         <script src="resources/photon-geocoder-autocomplete.min.js"></script>
         <script src="resources/olms.js"></script>
-        <script src="layers/Soilbodies_Viikki_3.js"></script><script src="layers/Ecozones_Viikki_4.js"></script><script src="layers/CLCViiki2018_5.js"></script><script src="layers/ViikiSustainability_6.js"></script><script src="layers/ViikiProfitability_7.js"></script><script src="layers/ViikiCrops_8.js"></script><script src="layers/ViikiLandUseOptimization_9.js"></script><script src="layers/WaterBodiesViiki_18.js"></script><script src="layers/ViikiFarmBuildings_19.js"></script>
-        <script src="styles/Soilbodies_Viikki_3_style.js"></script><script src="styles/Ecozones_Viikki_4_style.js"></script><script src="styles/CLCViiki2018_5_style.js"></script><script src="styles/ViikiSustainability_6_style.js"></script><script src="styles/ViikiProfitability_7_style.js"></script><script src="styles/ViikiCrops_8_style.js"></script><script src="styles/ViikiLandUseOptimization_9_style.js"></script><script src="styles/WaterBodiesViiki_18_style.js"></script><script src="styles/ViikiFarmBuildings_19_style.js"></script>
+        <script src="layers/SoilbodiesViikki_3.js"></script><script src="layers/EcozonesViikki_4.js"></script><script src="layers/CLCViiki2018_5.js"></script><script src="layers/ViikiSustainability_6.js"></script><script src="layers/ViikiProfitability_7.js"></script><script src="layers/ViikiCrops_8.js"></script><script src="layers/ViikiLandUseOptimization_9.js"></script><script src="layers/WaterBodiesViiki_18.js"></script><script src="layers/ViikiFieldBorders_19.js"></script><script src="layers/ViikiFarmBuildings_20.js"></script>
+        <script src="styles/SoilbodiesViikki_3_style.js"></script><script src="styles/EcozonesViikki_4_style.js"></script><script src="styles/CLCViiki2018_5_style.js"></script><script src="styles/ViikiSustainability_6_style.js"></script><script src="styles/ViikiProfitability_7_style.js"></script><script src="styles/ViikiCrops_8_style.js"></script><script src="styles/ViikiLandUseOptimization_9_style.js"></script><script src="styles/WaterBodiesViiki_18_style.js"></script><script src="styles/ViikiFieldBorders_19_style.js"></script><script src="styles/ViikiFarmBuildings_20_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>        
-    </body>
+<script>
+(function() {
+  const layerSources = {
+    "Soilbodies Viikki": "Luke 2016",
+    "Ecozones Viikki": "FAO 2025",
+    "CLC Viiki 2018": "CLMS 2018",
+    "Viiki Sustainability": "Ruokavirasto 2024",
+    "Viiki Profitability": "Ruokavirasto 2024",
+    "Viiki Crops": "Ruokavirasto 2024",
+    "Viiki Land Use Optimization": "Ruokavirasto 2024",
+    "NDVI Viiki": "CLMS 2025",
+    "SoilMoisture Viiki": "SoilGrids 2026",
+    "Soil Moisture Viiki": "SoilGrids 2026",
+    "Ploughing Indicator 2023 Viiki": "CLMS 2023",
+    "Small Woody Features 2021 Viiki": "CLMS 2021",
+    "Grassland 2023 Viiki": "CLMS 2023",
+    "Forest Type 2021 Viiki": "CLMS 2021",
+    "SoilMoisture Viiki Fields": "SoilGrids 2026",
+    "Soil Moisture Viiki Fields": "SoilGrids 2026",
+    "NDVI Viiki Fields": "CLMS 2025",
+    "Water Bodies Viiki": "OpenStreetMap 2026",
+    "Viiki Field Borders": "Ruokavirasto 2024",
+    "Viiki Farm Buildings": "OpenStreetMap 2026"
+  };
+
+  function cleanLayerTitle(title) {
+    return String(title || '')
+      .split('<br')[0]
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function getLayerName(layer) {
+    if (!layer || !layer.get) return '';
+    return cleanLayerTitle(layer.get('popuplayertitle') || layer.get('title') || '');
+  }
+
+  function setLayerSourceProperties() {
+    if (typeof layersList === 'undefined') return;
+    layersList.forEach(function(layer) {
+      var name = getLayerName(layer);
+      if (layerSources[name]) layer.set('layerSourceText', layerSources[name]);
+    });
+  }
+
+  function stripOldLayerSourceText(html) {
+    return String(html || '')
+      .replace(/\s*\|\s*<span class="active-layer-sources-attribution"[^>]*>.*?<\/span>/gis, '')
+      .replace(/\s*\|\s*Layer source[s]?:.*$/gis, '')
+      .trim();
+  }
+
+  function cleanNativeAttributionItems() {
+    var attributionLists = document.querySelectorAll('.bottom-attribution ul, .ol-attribution ul');
+    attributionLists.forEach(function(ul) {
+      Array.from(ul.querySelectorAll('li')).forEach(function(li) {
+        if (li.id === 'custom-layer-source-attribution') return;
+        li.innerHTML = stripOldLayerSourceText(li.innerHTML);
+      });
+    });
+  }
+
+  function getCustomAttributionListItem() {
+    var ul = document.querySelector('.bottom-attribution ul') || document.querySelector('.ol-attribution ul');
+    if (!ul) return null;
+    var li = document.getElementById('custom-layer-source-attribution');
+    if (!li) {
+      li = document.createElement('li');
+      li.id = 'custom-layer-source-attribution';
+      li.className = 'custom-layer-source-attribution';
+      ul.appendChild(li);
+    } else if (li.parentElement !== ul) {
+      ul.appendChild(li);
+    }
+    return li;
+  }
+
+  function getVisibleLayerSourceEntries() {
+    var entries = [];
+    var seen = {};
+    if (typeof layersList === 'undefined') return entries;
+    layersList.forEach(function(layer) {
+      if (!layer || !layer.getVisible || !layer.getVisible()) return;
+      if (layer.get('type') === 'base') return;
+      var name = getLayerName(layer);
+      var source = layer.get('layerSourceText') || layerSources[name];
+      if (!source) return;
+      var key = name + '|' + source;
+      if (seen[key]) return;
+      seen[key] = true;
+      entries.push('<strong>' + name + ':</strong> ' + source);
+    });
+    entries.sort();
+    return entries;
+  }
+
+  function updateLayerSourceAttribution() {
+    setLayerSourceProperties();
+    cleanNativeAttributionItems();
+    var li = getCustomAttributionListItem();
+    if (!li) return;
+    var entries = getVisibleLayerSourceEntries();
+    if (entries.length) {
+      li.style.display = '';
+      li.innerHTML = '<span class="active-layer-sources-attribution">Layer source' + (entries.length > 1 ? 's' : '') + ': ' + entries.join(' &nbsp;|&nbsp; ') + '</span>';
+    } else {
+      li.innerHTML = '';
+      li.style.display = 'none';
+    }
+  }
+
+  function attachLayerSourceListeners() {
+    if (typeof layersList === 'undefined') return;
+    layersList.forEach(function(layer) {
+      if (layer && layer.on) {
+        layer.on('change:visible', function() {
+          setTimeout(updateLayerSourceAttribution, 0);
+          setTimeout(updateLayerSourceAttribution, 80);
+        });
+      }
+    });
+  }
+
+  function initLayerSourceAttribution() {
+    if (typeof map === 'undefined' || typeof layersList === 'undefined') return;
+    setLayerSourceProperties();
+    attachLayerSourceListeners();
+    updateLayerSourceAttribution();
+    map.on('moveend', updateLayerSourceAttribution);
+    setInterval(updateLayerSourceAttribution, 1200);
+  }
+
+  setTimeout(initLayerSourceAttribution, 800);
+})();
+</script>
+
+</body>
 </html>

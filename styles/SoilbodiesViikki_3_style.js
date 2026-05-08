@@ -1,12 +1,12 @@
 var size = 0;
 var placement = 'point';
-function categories_Soilbodies_Viikki_3(feature, value, size, resolution, labelText,
+function categories_SoilbodiesViikki_3(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement) {
                 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
                 switch(valueStr) {case 'Anthrosols (Technosols)':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(231,54,113,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(231,54,113,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -14,7 +14,7 @@ function categories_Soilbodies_Viikki_3(feature, value, size, resolution, labelT
                     break;
 case 'Arenic Podzols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(159,35,200,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(159,35,200,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -22,7 +22,7 @@ case 'Arenic Podzols':
                     break;
 case 'Dystric Histosols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(208,132,120,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(208,132,120,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -30,7 +30,7 @@ case 'Dystric Histosols':
                     break;
 case 'Dystric Leptosols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(19,224,204,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(19,224,204,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -38,7 +38,7 @@ case 'Dystric Leptosols':
                     break;
 case 'Endogleyic Podzols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(171,219,126,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(171,219,126,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -46,7 +46,7 @@ case 'Endogleyic Podzols':
                     break;
 case 'Histic Gleysols (Hyperhumic)':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(211,220,39,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(211,220,39,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -54,7 +54,7 @@ case 'Histic Gleysols (Hyperhumic)':
                     break;
 case 'Histic Gleysols(Clayic)':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(212,153,70,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(212,153,70,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -62,7 +62,7 @@ case 'Histic Gleysols(Clayic)':
                     break;
 case 'Nudilithic Leptosols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(120,88,200,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(120,88,200,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -70,7 +70,7 @@ case 'Nudilithic Leptosols':
                     break;
 case 'Sapric Histosols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(102,125,240,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(102,125,240,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -78,7 +78,7 @@ case 'Sapric Histosols':
                     break;
 case 'Stagnic Regosols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(131,224,127,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(131,224,127,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -86,7 +86,7 @@ case 'Stagnic Regosols':
                     break;
 case 'Umbric Gleysols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(78,216,138,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(78,216,138,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -94,14 +94,14 @@ case 'Umbric Gleysols':
                     break;
 case 'Vertic Luvic Stagnosols':
                     return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(209,51,175,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,255,255,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.95}),fill: new ol.style.Fill({color: 'rgba(209,51,175,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
                     break;}};
 
-var style_Soilbodies_Viikki_3 = function(feature, resolution){
+var style_SoilbodiesViikki_3 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -121,7 +121,7 @@ var style_Soilbodies_Viikki_3 = function(feature, resolution){
         labelText = String("");
     }
     
-    var style = categories_Soilbodies_Viikki_3(feature, value, size, resolution, labelText,
+    var style = categories_SoilbodiesViikki_3(feature, value, size, resolution, labelText,
                             labelFont, labelFill, bufferColor,
                             bufferWidth, placement);
 

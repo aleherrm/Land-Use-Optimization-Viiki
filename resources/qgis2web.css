@@ -424,3 +424,303 @@ td video {
     color: orangered;
 	font-size: 15px;
 }
+
+/* Improved popup table spacing */
+#popup-content table {
+    border-collapse: separate;
+    border-spacing: 0 4px;
+}
+#popup-content th,
+#popup-content td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.recommendations-popup {
+    display: block;
+    line-height: 1.32;
+}
+.recommendation-item {
+    display: block;
+    margin-bottom: 0.55em;
+}
+.recommendation-item:last-child {
+    margin-bottom: 0;
+}
+
+.ol-popup.docked-popup {
+    position: fixed !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    border-radius: 0 12px 0 0 !important;
+    width: 400px;
+    max-width: min(400px, 42vw);
+    max-height: 58vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 10000;
+}
+.ol-popup.docked-popup:after,
+.ol-popup.docked-popup:before {
+    display: none !important;
+}
+.ol-popup.docked-popup #popup-content {
+    max-height: calc(58vh - 42px);
+    max-width: none;
+    overflow: auto;
+}
+@media (max-width: 720px) {
+    .ol-popup.docked-popup {
+        width: 92vw;
+        max-width: 92vw;
+        max-height: 52vh;
+    }
+    .ol-popup.docked-popup #popup-content {
+        max-height: calc(52vh - 42px);
+    }
+}
+
+/* Fixed bottom-left information panel for selected field layers */
+.docked-info-panel {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 420px;
+    max-width: min(420px, 44vw);
+    max-height: 60vh;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 0 12px 0 0;
+    padding: 14px 16px 14px 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    z-index: 10000;
+    overflow: hidden;
+}
+#docked-info-content {
+    font-size: 12px;
+    line-height: 1.28;
+    max-height: calc(60vh - 24px);
+    overflow: auto;
+}
+#docked-info-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+#docked-info-content li {
+    margin-bottom: 0.55em;
+}
+#docked-info-content table {
+    width: 100%;
+    border-spacing: 0 0.28em;
+}
+#docked-info-content th {
+    vertical-align: top;
+    text-align: left;
+    padding-right: 0.75em;
+    white-space: nowrap;
+}
+#docked-info-content td {
+    vertical-align: top;
+}
+.docked-info-panel .ol-popup-closer {
+    top: 4px;
+    right: 5px;
+}
+body.fixed-info-open #bottom-left-container {
+    bottom: 8px;
+    left: 430px;
+}
+.recommendations-popup div,
+.recommendation-item {
+    margin-bottom: 0.45em;
+    line-height: 1.35;
+}
+.recommendations-popup div:last-child,
+.recommendation-item:last-child {
+    margin-bottom: 0;
+}
+@media (max-width: 720px) {
+    .docked-info-panel {
+        width: 92vw;
+        max-width: 92vw;
+        max-height: 54vh;
+    }
+    #docked-info-content {
+        max-height: calc(54vh - 24px);
+    }
+    body.fixed-info-open #bottom-left-container {
+        bottom: calc(54vh + 8px);
+        left: 0;
+    }
+}
+
+.active-layer-sources-attribution {
+    color: #ffffff;
+}
+.active-layer-sources-attribution strong {
+    font-weight: 700;
+}
+
+/* Step 13 custom UI: dark popups, top-left logo, centered controls */
+.map-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10001;
+    background: rgba(0,0,0,0.82);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+    line-height: 1.05;
+    pointer-events: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.map-logo-main {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+.map-logo-sub {
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.88;
+    margin-top: 2px;
+}
+#top-left-container {
+    top: 50% !important;
+    transform: translateY(-50%);
+    left: 10px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    z-index: 10000;
+}
+#top-left-container .ol-control,
+#top-left-container .measure-control,
+#top-left-container .geolocate,
+#top-left-container .search-layer {
+    margin: 0 !important;
+    float: none !important;
+    position: relative !important;
+}
+.ol-popup {
+    background: rgba(0,0,0,0.88) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.65) !important;
+}
+.ol-popup:after, .ol-popup:before {
+    border-top-color: rgba(0,0,0,0.88) !important;
+}
+.ol-popup table, .ol-popup th, .ol-popup td, .ol-popup a {
+    color: #fff !important;
+}
+.ol-popup-closer:after {
+    color: #fff !important;
+}
+.docked-info-panel {
+    background: rgba(0,0,0,0.90) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+#docked-info-content, #docked-info-content table, #docked-info-content th, #docked-info-content td, #docked-info-content a {
+    color: #fff !important;
+}
+#docked-info-content table {
+    border-spacing: 0 0.42em !important;
+}
+#docked-info-content th {
+    padding-right: 1em !important;
+}
+.active-layer-sources-attribution {
+    color: #fff;
+}
+.bottom-attribution ul {
+    color: #fff !important;
+}
+@media (max-width: 720px) {
+    .map-logo {
+        transform: scale(0.86);
+        transform-origin: top left;
+    }
+    #top-left-container {
+        top: 52% !important;
+    }
+}
+
+
+/* Step 14: clickable Avoin logo */
+.map-logo {
+    display: block !important;
+    pointer-events: auto !important;
+    padding: 8px 10px !important;
+    text-decoration: none !important;
+}
+.map-logo img {
+    display: block;
+    width: 74px;
+    height: auto;
+}
+.map-logo-main,
+.map-logo-sub {
+    display: none !important;
+}
+
+
+/* Step 15: stable layer-source attribution and visible clickable Avoin logo */
+.custom-layer-source-attribution {
+    color: #ffffff !important;
+}
+.custom-layer-source-attribution:empty {
+    display: none !important;
+}
+.active-layer-sources-attribution {
+    color: #ffffff !important;
+}
+.active-layer-sources-attribution strong {
+    font-weight: 700;
+}
+#map-logo.map-logo {
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    z-index: 2147483647 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: rgba(0, 0, 0, 0.88) !important;
+    padding: 9px 10px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.55) !important;
+    pointer-events: auto !important;
+    text-decoration: none !important;
+}
+#map-logo.map-logo img {
+    display: block !important;
+    width: 82px !important;
+    height: auto !important;
+}
+#map-logo.map-logo:hover {
+    background: rgba(0,0,0,0.96) !important;
+}
+
+
+/* STEP 16 ONLY: move the existing left-side control stack directly below the Avoin logo */
+#top-left-container {
+    top: 130px !important;
+    left: 10px !important;
+    transform: none !important;
+}
+@media (max-width: 720px) {
+    #top-left-container {
+        top: 130px !important;
+        left: 10px !important;
+        transform: none !important;
+    }
+}

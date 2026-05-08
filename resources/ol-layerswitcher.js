@@ -402,6 +402,18 @@ class LayerSwitcher extends Control {
         }
     }
     /**
+     * Show legend entries only for currently visible layers.
+     * qgis2web stores the layer name and legend HTML together in the title string.
+     * When the layer is off, only keep the text before the first line break.
+     */
+    static renderLayerTitle_(lyr, lyrTitle) {
+        if (lyr.getVisible && lyr.getVisible()) {
+            return lyrTitle;
+        }
+        return String(lyrTitle).split('<br />')[0].split('<br>')[0];
+    }
+
+    /**
      * Render all layers that are children of a group.
      * @param map The map instance.
      * @param lyr Layer to be rendered (should have a title property).
@@ -446,7 +458,7 @@ class LayerSwitcher extends Control {
                 li.appendChild(input);
                 label.htmlFor = checkboxId;
             }
-            label.innerHTML = lyrTitle;
+            label.innerHTML = LayerSwitcher.renderLayerTitle_(lyr, lyrTitle);
             li.appendChild(label);
             const ul = document.createElement('ul');
             li.appendChild(ul);
@@ -471,7 +483,7 @@ class LayerSwitcher extends Control {
             };
             li.appendChild(input);
             label.htmlFor = checkboxId;
-            label.innerHTML = lyrTitle;
+            label.innerHTML = LayerSwitcher.renderLayerTitle_(lyr, lyrTitle);
             const rsl = map.getView().getResolution();
             if (rsl >= lyr.getMaxResolution() || rsl < lyr.getMinResolution()) {
                 label.className += ' disabled';

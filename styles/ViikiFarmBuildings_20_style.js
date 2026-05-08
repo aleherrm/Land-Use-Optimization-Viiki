@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_ViikiFarmBuildings_19 = function(feature, resolution){
+var style_ViikiFarmBuildings_20 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
