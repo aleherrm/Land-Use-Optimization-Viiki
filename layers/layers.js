@@ -191,6 +191,25 @@ var lyr_ViikiLandUseOptimization_9 = new ol.layer.Vector({
     <img src="styles/legend/ViikiLandUseOptimization_9_0.png" /> Action needed<br />\
     <img src="styles/legend/ViikiLandUseOptimization_9_1.png" /> Action advisable<br />\
     <img src="styles/legend/ViikiLandUseOptimization_9_2.png" /> No action needed<br />' });
+var lyr_PhotovoltaicpowerpotentialHelsinkikWhkWp_10 = new ol.layer.Image({
+        opacity: 1,
+        
+    title: 'Photovoltaic power potential Helsinki [kWh/kWp]<br />\
+    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_0.png" /> 2.7920<br />\
+    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_1.png" /> 2.8348<br />\
+    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_2.png" /> 2.8775<br />\
+    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_3.png" /> 2.9203<br />\
+    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_4.png" /> 2.9630<br />' ,
+        
+        
+        source: new ol.source.ImageStatic({
+            url: "./layers/PhotovoltaicpowerpotentialHelsinkikWhkWp_10.png",
+            attributions: ' ',
+            projection: 'EPSG:3857',
+            alwaysInRange: true,
+            imageExtent: [2764434.021329, 8420174.801208, 2810817.142530, 8466834.603491]
+        })
+    });
 var lyr_NDVIViiki_10 = new ol.layer.Image({
         opacity: 1,
         
@@ -399,9 +418,25 @@ var lyr_ViikiFarmBuildings_20 = new ol.layer.Vector({
                 interactive: false,
                 title: '<img src="styles/legend/ViikiFarmBuildings_20.png" /> Viiki Farm Buildings'
             });
+var format_SolarPannelsViiki_21 = new ol.format.GeoJSON();
+var features_SolarPannelsViiki_21 = format_SolarPannelsViiki_21.readFeatures(json_SolarPannelsViiki_21, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SolarPannelsViiki_21 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SolarPannelsViiki_21.addFeatures(features_SolarPannelsViiki_21);
+var lyr_SolarPannelsViiki_21 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SolarPannelsViiki_21, 
+                style: style_SolarPannelsViiki_21,
+                popuplayertitle: 'Solar Pannels Viiki',
+                interactive: true,
+                title: '<img src="styles/legend/SolarPannelsViiki_21.png" /> Solar Pannels Viiki'
+            });
 
-lyr_GoogleHybrid_0.setVisible(true);lyr_GoogleMaps_1.setVisible(true);lyr_GoogleSatellite_2.setVisible(true);lyr_SoilbodiesViikki_3.setVisible(false);lyr_EcozonesViikki_4.setVisible(false);lyr_CLCViiki2018_5.setVisible(false);lyr_ViikiSustainability_6.setVisible(false);lyr_ViikiProfitability_7.setVisible(false);lyr_ViikiCrops_8.setVisible(false);lyr_ViikiLandUseOptimization_9.setVisible(false);lyr_NDVIViiki_10.setVisible(false);lyr_SoilMoistureViiki_11.setVisible(false);lyr_PloughingIndicator2023Viiki_12.setVisible(false);lyr_SmallWoodyFeatures2021Viiki_13.setVisible(false);lyr_Grassland2023Viiki_14.setVisible(false);lyr_ForestType2021Viiki_15.setVisible(false);lyr_SoilMoistureViikiFields_16.setVisible(false);lyr_NDVIViikiFields_17.setVisible(false);lyr_WaterBodiesViiki_18.setVisible(false);lyr_ViikiFieldBorders_19.setVisible(false);lyr_ViikiFarmBuildings_20.setVisible(false);
-var layersList = [lyr_GoogleHybrid_0,lyr_GoogleMaps_1,lyr_GoogleSatellite_2,lyr_SoilbodiesViikki_3,lyr_EcozonesViikki_4,lyr_CLCViiki2018_5,lyr_ViikiSustainability_6,lyr_ViikiProfitability_7,lyr_ViikiCrops_8,lyr_ViikiLandUseOptimization_9,lyr_NDVIViiki_10,lyr_SoilMoistureViiki_11,lyr_PloughingIndicator2023Viiki_12,lyr_SmallWoodyFeatures2021Viiki_13,lyr_Grassland2023Viiki_14,lyr_ForestType2021Viiki_15,lyr_SoilMoistureViikiFields_16,lyr_NDVIViikiFields_17,lyr_WaterBodiesViiki_18,lyr_ViikiFieldBorders_19,lyr_ViikiFarmBuildings_20];
+
+lyr_GoogleHybrid_0.setVisible(true);lyr_GoogleMaps_1.setVisible(true);lyr_GoogleSatellite_2.setVisible(true);lyr_SoilbodiesViikki_3.setVisible(false);lyr_EcozonesViikki_4.setVisible(false);lyr_CLCViiki2018_5.setVisible(false);lyr_ViikiSustainability_6.setVisible(false);lyr_ViikiProfitability_7.setVisible(false);lyr_ViikiCrops_8.setVisible(false);lyr_ViikiLandUseOptimization_9.setVisible(false);lyr_PhotovoltaicpowerpotentialHelsinkikWhkWp_10.setVisible(false);lyr_NDVIViiki_10.setVisible(false);lyr_SoilMoistureViiki_11.setVisible(false);lyr_PloughingIndicator2023Viiki_12.setVisible(false);lyr_SmallWoodyFeatures2021Viiki_13.setVisible(false);lyr_Grassland2023Viiki_14.setVisible(false);lyr_ForestType2021Viiki_15.setVisible(false);lyr_SoilMoistureViikiFields_16.setVisible(false);lyr_NDVIViikiFields_17.setVisible(false);lyr_WaterBodiesViiki_18.setVisible(false);lyr_ViikiFieldBorders_19.setVisible(false);lyr_ViikiFarmBuildings_20.setVisible(false);lyr_SolarPannelsViiki_21.setVisible(false);
+var layersList = [lyr_GoogleHybrid_0,lyr_GoogleMaps_1,lyr_GoogleSatellite_2,lyr_SoilbodiesViikki_3,lyr_EcozonesViikki_4,lyr_CLCViiki2018_5,lyr_ViikiSustainability_6,lyr_ViikiProfitability_7,lyr_ViikiCrops_8,lyr_ViikiLandUseOptimization_9,lyr_PhotovoltaicpowerpotentialHelsinkikWhkWp_10,lyr_NDVIViiki_10,lyr_SoilMoistureViiki_11,lyr_PloughingIndicator2023Viiki_12,lyr_SmallWoodyFeatures2021Viiki_13,lyr_Grassland2023Viiki_14,lyr_ForestType2021Viiki_15,lyr_SoilMoistureViikiFields_16,lyr_NDVIViikiFields_17,lyr_WaterBodiesViiki_18,lyr_ViikiFieldBorders_19,lyr_SolarPannelsViiki_21,lyr_ViikiFarmBuildings_20];
 lyr_SoilbodiesViikki_3.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'Soilbodies': 'Soilbodies', 'Soilbodi_1': 'Soilbodi_1', 'Soilbodi_2': 'Soilbodi_2', 'Soilbodi_3': 'Soilbodi_3', 'Soilbodi_4': 'Soilbodi_4', 'Soilbodi_5': 'Soilbodi_5', 'Table_18_S': 'Table_18_S', 'Table_18_1': 'Table_18_1', 'Soilbody': 'Soilbody', 'Table_18_3': 'Table_18_3', 'Table_18_4': 'Table_18_4', 'Table_18_5': 'Table_18_5', 'Table_18_6': 'Table_18_6', });
 lyr_EcozonesViikki_4.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'Ecozone': 'Ecozone', 'gez_code': 'gez_code', 'gez_abbrev': 'gez_abbrev', });
 lyr_CLCViiki2018_5.set('fieldAliases', {'fid': 'fid', 'OBJECTID': 'OBJECTID', 'CLC_Code': 'CLC_Code', 'Remark': 'Remark', 'Area_Ha': 'Area_Ha', 'ID': 'ID', 'Shape_Length': 'Shape_Length', 'Shape_Area': 'Shape_Area', 'Landuse Class': 'Landuse Class', 'CLC_legend_RGB': 'CLC_legend_RGB', });
@@ -412,6 +447,7 @@ lyr_ViikiLandUseOptimization_9.set('fieldAliases', {'fid': 'fid', 'Field ID': 'F
 lyr_WaterBodiesViiki_18.set('fieldAliases', {'fid': 'fid', 'full_id': 'full_id', 'osm_id': 'osm_id', 'natural': 'natural', 'name': 'name', 'water': 'water', });
 lyr_ViikiFieldBorders_19.set('fieldAliases', {'fid': 'fid', });
 lyr_ViikiFarmBuildings_20.set('fieldAliases', {'fid': 'fid', '@id': '@id', 'building': 'building', });
+lyr_SolarPannelsViiki_21.set('fieldAliases', {'fid': 'fid', 'Source': 'Source', });
 lyr_SoilbodiesViikki_3.set('fieldImages', {'OBJECTID': 'TextEdit', 'Soilbodies': 'TextEdit', 'Soilbodi_1': 'TextEdit', 'Soilbodi_2': 'Range', 'Soilbodi_3': 'TextEdit', 'Soilbodi_4': 'TextEdit', 'Soilbodi_5': 'TextEdit', 'Table_18_S': 'Range', 'Table_18_1': 'TextEdit', 'Soilbody': 'TextEdit', 'Table_18_3': 'TextEdit', 'Table_18_4': 'TextEdit', 'Table_18_5': 'TextEdit', 'Table_18_6': 'TextEdit', });
 lyr_EcozonesViikki_4.set('fieldImages', {'OBJECTID': 'TextEdit', 'Ecozone': 'TextEdit', 'gez_code': 'TextEdit', 'gez_abbrev': 'TextEdit', });
 lyr_CLCViiki2018_5.set('fieldImages', {'fid': 'TextEdit', 'OBJECTID': 'TextEdit', 'CLC_Code': 'TextEdit', 'Remark': 'TextEdit', 'Area_Ha': 'TextEdit', 'ID': 'TextEdit', 'Shape_Length': 'TextEdit', 'Shape_Area': 'TextEdit', 'Landuse Class': 'TextEdit', 'CLC_legend_RGB': 'TextEdit', });
@@ -422,6 +458,7 @@ lyr_ViikiLandUseOptimization_9.set('fieldImages', {'fid': 'TextEdit', 'Field ID'
 lyr_WaterBodiesViiki_18.set('fieldImages', {'fid': 'TextEdit', 'full_id': 'TextEdit', 'osm_id': 'TextEdit', 'natural': 'TextEdit', 'name': 'TextEdit', 'water': 'TextEdit', });
 lyr_ViikiFieldBorders_19.set('fieldImages', {'fid': 'Range', });
 lyr_ViikiFarmBuildings_20.set('fieldImages', {'fid': 'TextEdit', '@id': 'TextEdit', 'building': 'TextEdit', });
+lyr_SolarPannelsViiki_21.set('fieldImages', {'fid': 'TextEdit', 'Source': 'TextEdit', });
 lyr_SoilbodiesViikki_3.set('fieldLabels', {'OBJECTID': 'hidden field', 'Soilbodies': 'hidden field', 'Soilbodi_1': 'hidden field', 'Soilbodi_2': 'hidden field', 'Soilbodi_3': 'hidden field', 'Soilbodi_4': 'hidden field', 'Soilbodi_5': 'hidden field', 'Table_18_S': 'hidden field', 'Table_18_1': 'hidden field', 'Soilbody': 'no label', 'Table_18_3': 'hidden field', 'Table_18_4': 'hidden field', 'Table_18_5': 'hidden field', 'Table_18_6': 'hidden field', });
 lyr_EcozonesViikki_4.set('fieldLabels', {'OBJECTID': 'hidden field', 'Ecozone': 'no label', 'gez_code': 'hidden field', 'gez_abbrev': 'hidden field', });
 lyr_CLCViiki2018_5.set('fieldLabels', {'fid': 'hidden field', 'OBJECTID': 'hidden field', 'CLC_Code': 'hidden field', 'Remark': 'hidden field', 'Area_Ha': 'hidden field', 'ID': 'hidden field', 'Shape_Length': 'hidden field', 'Shape_Area': 'hidden field', 'Landuse Class': 'no label', 'CLC_legend_RGB': 'hidden field', });
@@ -432,6 +469,7 @@ lyr_ViikiLandUseOptimization_9.set('fieldLabels', {'fid': 'hidden field', 'Field
 lyr_WaterBodiesViiki_18.set('fieldLabels', {'fid': 'inline label - always visible', 'full_id': 'inline label - always visible', 'osm_id': 'inline label - always visible', 'natural': 'inline label - always visible', 'name': 'inline label - always visible', 'water': 'inline label - always visible', });
 lyr_ViikiFieldBorders_19.set('fieldLabels', {'fid': 'inline label - always visible', });
 lyr_ViikiFarmBuildings_20.set('fieldLabels', {'fid': 'inline label - always visible', '@id': 'inline label - always visible', 'building': 'inline label - always visible', });
+lyr_SolarPannelsViiki_21.set('fieldLabels', {'fid': 'no label', 'Source': 'no label', });
 lyr_ViikiFarmBuildings_20.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
