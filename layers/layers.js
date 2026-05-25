@@ -103,6 +103,26 @@ var lyr_CLCViiki2018_5 = new ol.layer.Vector({
     <img src="styles/legend/CLCViiki2018_5_8.png" /> Road and rail networks and associated land<br />\
     <img src="styles/legend/CLCViiki2018_5_9.png" /> Salt marshes<br />\
     <img src="styles/legend/CLCViiki2018_5_10.png" /> Sea and ocean<br />' });
+var format_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6 = new ol.format.GeoJSON();
+var features_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6 = format_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6.readFeatures(json_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6.addFeatures(features_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6);
+var lyr_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6, 
+                style: style_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6,
+                popuplayertitle: 'Photovoltaic Potential Viiki Field Avg. [kWh/ kWp]',
+                interactive: true,
+    title: 'Photovoltaic Potential Viiki Field Avg. [kWh/ kWp]<br />\
+    <img src="styles/legend/PhotovoltaicPotentialViikiFieldAvgkWhkWp_6_0.png" /> 2.825 - 2.842<br />\
+    <img src="styles/legend/PhotovoltaicPotentialViikiFieldAvgkWhkWp_6_1.png" /> 2.842 - 2.855<br />\
+    <img src="styles/legend/PhotovoltaicPotentialViikiFieldAvgkWhkWp_6_2.png" /> 2.855 - 2.859<br />\
+    <img src="styles/legend/PhotovoltaicPotentialViikiFieldAvgkWhkWp_6_3.png" /> 2.859 - 2.8656<br />\
+    <img src="styles/legend/PhotovoltaicPotentialViikiFieldAvgkWhkWp_6_4.png" /> 2.8656 - 2.873<br />' });
+
 var format_ViikiSustainability_6 = new ol.format.GeoJSON();
 var features_ViikiSustainability_6 = format_ViikiSustainability_6.readFeatures(json_ViikiSustainability_6, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
@@ -191,25 +211,26 @@ var lyr_ViikiLandUseOptimization_9 = new ol.layer.Vector({
     <img src="styles/legend/ViikiLandUseOptimization_9_0.png" /> Action needed<br />\
     <img src="styles/legend/ViikiLandUseOptimization_9_1.png" /> Action advisable<br />\
     <img src="styles/legend/ViikiLandUseOptimization_9_2.png" /> No action needed<br />' });
-var lyr_PhotovoltaicpowerpotentialHelsinkikWhkWp_10 = new ol.layer.Image({
-        opacity: 1,
-        
-    title: 'Photovoltaic power potential Helsinki [kWh/kWp]<br />\
-    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_0.png" /> 2.7920<br />\
-    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_1.png" /> 2.8348<br />\
-    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_2.png" /> 2.8775<br />\
-    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_3.png" /> 2.9203<br />\
-    <img src="styles/legend/PhotovoltaicpowerpotentialHelsinkikWhkWp_10_4.png" /> 2.9630<br />' ,
-        
-        
-        source: new ol.source.ImageStatic({
-            url: "./layers/PhotovoltaicpowerpotentialHelsinkikWhkWp_10.png",
-            attributions: ' ',
-            projection: 'EPSG:3857',
-            alwaysInRange: true,
-            imageExtent: [2764434.021329, 8420174.801208, 2810817.142530, 8466834.603491]
-        })
-    });
+var format_PhotovoltaicPowerPotentialHelsinkikWhkWp_11 = new ol.format.GeoJSON();
+var features_PhotovoltaicPowerPotentialHelsinkikWhkWp_11 = format_PhotovoltaicPowerPotentialHelsinkikWhkWp_11.readFeatures(json_PhotovoltaicPowerPotentialHelsinkikWhkWp_11, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_PhotovoltaicPowerPotentialHelsinkikWhkWp_11 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_PhotovoltaicPowerPotentialHelsinkikWhkWp_11.addFeatures(features_PhotovoltaicPowerPotentialHelsinkikWhkWp_11);
+var lyr_PhotovoltaicPowerPotentialHelsinkikWhkWp_11 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_PhotovoltaicPowerPotentialHelsinkikWhkWp_11, 
+                style: style_PhotovoltaicPowerPotentialHelsinkikWhkWp_11,
+                popuplayertitle: 'Photovoltaic Power Potential Helsinki [kWh/ kWp]',
+                interactive: true,
+    title: 'Photovoltaic Power Potential Helsinki [kWh/ kWp]<br />\
+    <img src="styles/legend/PhotovoltaicPowerPotentialHelsinkikWhkWp_11_0.png" /> 2.792 - 2.827<br />\
+    <img src="styles/legend/PhotovoltaicPowerPotentialHelsinkikWhkWp_11_1.png" /> 2.827 - 2.841<br />\
+    <img src="styles/legend/PhotovoltaicPowerPotentialHelsinkikWhkWp_11_2.png" /> 2.841 - 2.859<br />\
+    <img src="styles/legend/PhotovoltaicPowerPotentialHelsinkikWhkWp_11_3.png" /> 2.859 - 2.875<br />\
+    <img src="styles/legend/PhotovoltaicPowerPotentialHelsinkikWhkWp_11_4.png" /> 2.875 - 2.963<br />' });
+
 var lyr_NDVIViiki_10 = new ol.layer.Image({
         opacity: 1,
         
@@ -430,20 +451,28 @@ var lyr_SolarPannelsViiki_21 = new ol.layer.Vector({
                 source:jsonSource_SolarPannelsViiki_21, 
                 style: style_SolarPannelsViiki_21,
                 popuplayertitle: 'Solar Pannels Viiki',
-                interactive: true,
+                interactive: false,
                 title: '<img src="styles/legend/SolarPannelsViiki_21.png" /> Solar Pannels Viiki'
             });
 
 
-lyr_GoogleHybrid_0.setVisible(true);lyr_GoogleMaps_1.setVisible(true);lyr_GoogleSatellite_2.setVisible(true);lyr_SoilbodiesViikki_3.setVisible(false);lyr_EcozonesViikki_4.setVisible(false);lyr_CLCViiki2018_5.setVisible(false);lyr_ViikiSustainability_6.setVisible(false);lyr_ViikiProfitability_7.setVisible(false);lyr_ViikiCrops_8.setVisible(false);lyr_ViikiLandUseOptimization_9.setVisible(false);lyr_PhotovoltaicpowerpotentialHelsinkikWhkWp_10.setVisible(false);lyr_NDVIViiki_10.setVisible(false);lyr_SoilMoistureViiki_11.setVisible(false);lyr_PloughingIndicator2023Viiki_12.setVisible(false);lyr_SmallWoodyFeatures2021Viiki_13.setVisible(false);lyr_Grassland2023Viiki_14.setVisible(false);lyr_ForestType2021Viiki_15.setVisible(false);lyr_SoilMoistureViikiFields_16.setVisible(false);lyr_NDVIViikiFields_17.setVisible(false);lyr_WaterBodiesViiki_18.setVisible(false);lyr_ViikiFieldBorders_19.setVisible(false);lyr_ViikiFarmBuildings_20.setVisible(false);lyr_SolarPannelsViiki_21.setVisible(false);
-var layersList = [lyr_GoogleHybrid_0,lyr_GoogleMaps_1,lyr_GoogleSatellite_2,lyr_SoilbodiesViikki_3,lyr_EcozonesViikki_4,lyr_CLCViiki2018_5,lyr_ViikiSustainability_6,lyr_ViikiProfitability_7,lyr_ViikiCrops_8,lyr_ViikiLandUseOptimization_9,lyr_PhotovoltaicpowerpotentialHelsinkikWhkWp_10,lyr_NDVIViiki_10,lyr_SoilMoistureViiki_11,lyr_PloughingIndicator2023Viiki_12,lyr_SmallWoodyFeatures2021Viiki_13,lyr_Grassland2023Viiki_14,lyr_ForestType2021Viiki_15,lyr_SoilMoistureViikiFields_16,lyr_NDVIViikiFields_17,lyr_WaterBodiesViiki_18,lyr_ViikiFieldBorders_19,lyr_SolarPannelsViiki_21,lyr_ViikiFarmBuildings_20];
+lyr_GoogleHybrid_0.setVisible(true);lyr_GoogleMaps_1.setVisible(true);lyr_GoogleSatellite_2.setVisible(true);lyr_SoilbodiesViikki_3.setVisible(false);lyr_EcozonesViikki_4.setVisible(false);lyr_CLCViiki2018_5.setVisible(false);lyr_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6.setVisible(false);lyr_ViikiSustainability_6.setVisible(false);lyr_ViikiProfitability_7.setVisible(false);lyr_ViikiCrops_8.setVisible(false);lyr_ViikiLandUseOptimization_9.setVisible(false);lyr_PhotovoltaicPowerPotentialHelsinkikWhkWp_11.setVisible(false);lyr_NDVIViiki_10.setVisible(false);lyr_SoilMoistureViiki_11.setVisible(false);lyr_PloughingIndicator2023Viiki_12.setVisible(false);lyr_SmallWoodyFeatures2021Viiki_13.setVisible(false);lyr_Grassland2023Viiki_14.setVisible(false);lyr_ForestType2021Viiki_15.setVisible(false);lyr_SoilMoistureViikiFields_16.setVisible(false);lyr_NDVIViikiFields_17.setVisible(false);lyr_WaterBodiesViiki_18.setVisible(false);lyr_ViikiFieldBorders_19.setVisible(false);lyr_ViikiFarmBuildings_20.setVisible(false);lyr_SolarPannelsViiki_21.setVisible(false);
+var layersList = [lyr_GoogleHybrid_0,lyr_GoogleMaps_1,lyr_GoogleSatellite_2,lyr_SoilbodiesViikki_3,lyr_EcozonesViikki_4,lyr_CLCViiki2018_5,lyr_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6,lyr_ViikiSustainability_6,lyr_ViikiProfitability_7,lyr_ViikiCrops_8,lyr_ViikiLandUseOptimization_9,lyr_PhotovoltaicPowerPotentialHelsinkikWhkWp_11,lyr_NDVIViiki_10,lyr_SoilMoistureViiki_11,lyr_PloughingIndicator2023Viiki_12,lyr_SmallWoodyFeatures2021Viiki_13,lyr_Grassland2023Viiki_14,lyr_ForestType2021Viiki_15,lyr_SoilMoistureViikiFields_16,lyr_NDVIViikiFields_17,lyr_WaterBodiesViiki_18,lyr_ViikiFieldBorders_19,lyr_SolarPannelsViiki_21,lyr_ViikiFarmBuildings_20];
 lyr_SoilbodiesViikki_3.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'Soilbodies': 'Soilbodies', 'Soilbodi_1': 'Soilbodi_1', 'Soilbodi_2': 'Soilbodi_2', 'Soilbodi_3': 'Soilbodi_3', 'Soilbodi_4': 'Soilbodi_4', 'Soilbodi_5': 'Soilbodi_5', 'Table_18_S': 'Table_18_S', 'Table_18_1': 'Table_18_1', 'Soilbody': 'Soilbody', 'Table_18_3': 'Table_18_3', 'Table_18_4': 'Table_18_4', 'Table_18_5': 'Table_18_5', 'Table_18_6': 'Table_18_6', });
 lyr_EcozonesViikki_4.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'Ecozone': 'Ecozone', 'gez_code': 'gez_code', 'gez_abbrev': 'gez_abbrev', });
 lyr_CLCViiki2018_5.set('fieldAliases', {'fid': 'fid', 'OBJECTID': 'OBJECTID', 'CLC_Code': 'CLC_Code', 'Remark': 'Remark', 'Area_Ha': 'Area_Ha', 'ID': 'ID', 'Shape_Length': 'Shape_Length', 'Shape_Area': 'Shape_Area', 'Landuse Class': 'Landuse Class', 'CLC_legend_RGB': 'CLC_legend_RGB', });
+lyr_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6.set('fieldAliases', {'Photovoltaic power potential [kWh/ kWp]': 'Photovoltaic power potential [kWh/ kWp]', });
+lyr_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6.set('fieldImages', {'Photovoltaic power potential [kWh/ kWp]': 'TextEdit', });
+lyr_PhotovoltaicPotentialViikiFieldAvgkWhkWp_6.set('fieldLabels', {'Photovoltaic power potential [kWh/ kWp]': 'no label', });
+
 lyr_ViikiSustainability_6.set('fieldAliases', {'fid': 'fid', 'Field ID': 'Field ID', 'Area (Hectare)': 'Area (Hectare)', 'Area (Hect': 'Area (Hectare)', 'Year': 'Year', 'Crop': 'Crop', 'Soil Type': 'Soil Type', 'Organic Farm': 'Organic Farm', 'Organic Fa': 'Organic Farm', 'Ecozone': 'Ecozone', 'Sustainability': 'Sustainability', 'Sustainability Score': 'Sustainability Score', 'CO2 Emissions [kg/ha]': 'CO2 Emissions [kg/ha]', 'Diesel Use [L/ha]': 'Diesel Use [L/ha]', 'Fertilizer Use  [kg N/ha]': 'Fertilizer Use  [kg N/ha]', 'Pesticide Use [kg/ha]': 'Pesticide Use [kg/ha]', 'Fungicide Use [kg/ha]': 'Fungicide Use [kg/ha]', 'Distance to nearest Water Body [m]': 'Distance to nearest Water Body [m]', 'Distance to nearest Farm Building [m]': 'Distance to nearest Farm Building [m]', });
 lyr_ViikiProfitability_7.set('fieldAliases', {'fid': 'fid', 'Field ID': 'Field ID', 'Area (Hectare)': 'Area (Hectare)', 'Area (Hect': 'Area (Hectare)', 'Year': 'Year', 'Crop': 'Crop', 'Profitability': 'Profitability', 'Profitability Score': 'Profitability Score', 'Current Profit [€/ha]': 'Current Profit [€/ha]', 'Crop Yield [t/ha]': 'Crop Yield [t/ha]', 'Crop Price [€/t]': 'Crop Price [€/t]', 'Diesel Use [L/ha]': 'Diesel Use [L/ha]', 'Fertilizer Use  [kg N/ha]': 'Fertilizer Use  [kg N/ha]', 'Pesticide Use [kg/ha]': 'Pesticide Use [kg/ha]', 'Fungicide Use [kg/ha]': 'Fungicide Use [kg/ha]', 'Distance to nearest Water Body [m]': 'Distance to nearest Water Body [m]', 'Distance to nearest Farm Building [m]': 'Distance to nearest Farm Building [m]', });
 lyr_ViikiCrops_8.set('fieldAliases', {'fid': 'fid', 'Field ID': 'Field ID', 'Area (Hectare)': 'Area (Hectare)', 'Area (Hect': 'Area (Hectare)', 'Year': 'Year', 'Crop': 'Crop', 'Organic Farm': 'Organic Farm', 'Organic Fa': 'Organic Farm', 'Crop Yield [t/ha]': 'Crop Yield [t/ha]', 'Crop Price [€/t]': 'Crop Price [€/t]', 'Fertilizer Use  [kg N/ha]': 'Fertilizer Use  [kg N/ha]', 'Pesticide Use [kg/ha]': 'Pesticide Use [kg/ha]', 'Fungicide Use [kg/ha]': 'Fungicide Use [kg/ha]', 'Seeds/m2': 'Seeds/m2', });
 lyr_ViikiLandUseOptimization_9.set('fieldAliases', {'fid': 'fid', 'Field ID': 'Field ID', 'Area (Hectare)': 'Area (Hectare)', 'Area (Hect': 'Area (Hectare)', 'Year': 'Year', 'Crop': 'Crop', 'Soil Type': 'Soil Type', 'Organic Farm': 'Organic Farm', 'Organic Fa': 'Organic Farm', 'Ecozone': 'Ecozone', 'Management Priority Class': 'Management Priority Class', 'Management Priority Score': 'Management Priority Score', 'Recommended Actions': 'Recommended Actions', 'Recommended_actions': 'Recommended Actions', 'Sustainability': 'Sustainability', 'Sustainability Score': 'Sustainability Score', 'Profitability': 'Profitability', 'Profitability Score': 'Profitability Score', 'Current Profit [€/ha]': 'Current Profit [€/ha]', 'Crop Yield [t/ha]': 'Crop Yield [t/ha]', 'Crop Price [€/t]': 'Crop Price [€/t]', 'Seeds/m2': 'Seeds/m2', 'CO2 Emissions [kg/ha]': 'CO2 Emissions [kg/ha]', 'Diesel Use [L/ha]': 'Diesel Use [L/ha]', 'Fertilizer Use  [kg N/ha]': 'Fertilizer Use  [kg N/ha]', 'Pesticide Use [kg/ha]': 'Pesticide Use [kg/ha]', 'Fungicide Use [kg/ha]': 'Fungicide Use [kg/ha]', 'NDVI Avg.': 'NDVI Avg.', 'Distance to nearest Water Body [m]': 'Distance to nearest Water Body [m]', 'Distance to nearest Farm Building [m]': 'Distance to nearest Farm Building [m]', });
+lyr_PhotovoltaicPowerPotentialHelsinkikWhkWp_11.set('fieldAliases', {'Photovoltaic Power Poetential [kWh/ kWp]': 'Photovoltaic Power Poetential [kWh/ kWp]', });
+lyr_PhotovoltaicPowerPotentialHelsinkikWhkWp_11.set('fieldImages', {'Photovoltaic Power Poetential [kWh/ kWp]': 'TextEdit', });
+lyr_PhotovoltaicPowerPotentialHelsinkikWhkWp_11.set('fieldLabels', {'Photovoltaic Power Poetential [kWh/ kWp]': 'no label', });
+
 lyr_WaterBodiesViiki_18.set('fieldAliases', {'fid': 'fid', 'full_id': 'full_id', 'osm_id': 'osm_id', 'natural': 'natural', 'name': 'name', 'water': 'water', });
 lyr_ViikiFieldBorders_19.set('fieldAliases', {'fid': 'fid', });
 lyr_ViikiFarmBuildings_20.set('fieldAliases', {'fid': 'fid', '@id': '@id', 'building': 'building', });
